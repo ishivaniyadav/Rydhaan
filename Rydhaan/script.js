@@ -4,5 +4,5 @@ function setRole(role) {
 }
 function logout() {
     localStorage.removeItem("userRole");
-    window.location.href = "homepage.html";
+    window.location.href = "index.html";
 }
