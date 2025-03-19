@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Rydhaan</div>
+        <button onclick="logout()">Logout</button>
+    </nav>
+
+    <h1>Owner Dashboard</h1>
+    <button onclick="document.getElementById('addCarForm').style.display='block'">Add a Car</button>
+
+    <div id="addCarForm" style="display:none;">
+        <h2>Post a Car</h2>
+        <input type="text" id="carName" placeholder="Car Name">
+        <input type="text" id="carPrice" placeholder="Price per Day">
+        <button onclick="postCar()">Submit</button>
+    </div>
+
+    <div id="carList"></div>
+
+    <script src="script.js"></script>
+    <script>
+        function postCar() {
+            let carName = document.getElementById("carName").value;
+            let carPrice = document.getElementById("carPrice").value;
+            alert(`Car '${carName}' submitted for admin approval.`);
+            document.getElementById("addCarForm").style.display = "none";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renter Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Renter Panel</div>
+        <button onclick="logout()">Logout</button>
+    </nav>
+
+    <h1>Available Cars</h1>
+    <div id="availableCars"></div>
+
+    <script src="script.js"></script>
+    <script>
+        let availableCars = [
+            { id: 1, name: "Toyota Camry", price: "₹500/day", approved: true },
+            { id: 2, name: "Honda City", price: "₹600/day", approved: true }
+        ];
+
+        function loadAvailableCars() {
+            let carList = document.getElementById("availableCars");
+            carList.innerHTML = "";
+            availableCars.forEach(car => {
+                carList.innerHTML += `<p>${car.name} - ${car.price}
+                <button onclick="bookCar(${car.id})">Book</button></p>`;
+            });
+        }
+
+        function bookCar(id) {
+            alert("Car booked successfully!");
+        }
+
+        document.addEventListener("DOMContentLoaded", loadAvailableCars);
+    </script>
+</body>
+</html>

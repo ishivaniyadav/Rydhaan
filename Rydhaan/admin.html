@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Admin Panel</div>
+        <button onclick="logout()">Logout</button>
+    </nav>
+
+    <h1>Pending Car Approvals</h1>
+    <div id="pendingCars"></div>
+
+    <script src="script.js"></script>
+    <script>
+        let cars = [
+            { id: 1, name: "Kia", price: "₹1000/day", approved: false },
+            { id: 2, name: "Honda City", price: "₹600/day", approved: false },
+            { id: 3, name: "Swift Desire", price: "₹800/day", approved: false },
+            
+        ];
+
+        function loadPendingCars() {
+            let carList = document.getElementById("pendingCars");
+            carList.innerHTML = "";
+            cars.forEach(car => {
+                if (!car.approved) {
+                    carList.innerHTML += `
+                        <p>${car.name} - ${car.price}
+                        <button onclick="approveCar(${car.id})">Approve</button>
+                        <button onclick="rejectCar(${car.id})">Reject</button></p>`;
+                }
+            });
+        }
+
+        function approveCar(id) {
+            let car = cars.find(car => car.id === id);
+            car.approved = true;
+            alert(car.name + " Approved");
+            loadPendingCars();
+        }
+
+        function rejectCar(id) {
+            cars = cars.filter(car => car.id !== id);
+            alert("Car Rejected");
+            loadPendingCars();
+        }
+
+        document.addEventListener("DOMContentLoaded", loadPendingCars);
+    </script>
+</body>
+</html>
