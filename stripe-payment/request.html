@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Request Sent</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Car Requested for Booking!</h2>
+    
+    <div id="booking-details" style="margin-top: 20px;"></div>
+    <div id="pay-btn-container"></div>
+  </div>
+
+  <script>
+    const detailsDiv = document.getElementById("booking-details");
+    const payDiv = document.getElementById("pay-btn-container");
+
+    const defaultBooking = {
+      status: "awaiting", 
+      fullName: "",
+      phone: "",
+      startDate: "",
+      endDate: "",
+      rentType: "",
+      totalPrice: 0
+    };
+
+    function renderStatus() {
+      let latestBooking = JSON.parse(localStorage.getItem("booking"));
+
+      if (!latestBooking) {
+        latestBooking = defaultBooking;
+      }
+
+      if (latestBooking.status === "confirmed") {
+        detailsDiv.innerHTML = `
+          <h3>✅ Booking Approved!</h3>
+          <p><strong>Name:</strong> ${latestBooking.renterName}</p>
+          <p><strong>Phone:</strong> ${latestBooking.phone}</p>
+          <p><strong>Start:</strong> ${latestBooking.startDate}</p>
+          <p><strong>End:</strong> ${latestBooking.endDate}</p>
+          <p><strong>Rent Type:</strong> ${latestBooking.carBrand}</p>
+          <p><strong>Total:</strong> ₹${latestBooking.totalPrice}</p>
+        `;
+        if (!payDiv.hasChildNodes()) {
+          const btn = document.createElement("button");
+          btn.textContent = "💳 PAY NOW";
+          btn.onclick = () => window.location.href = "pay-now.html";
+          payDiv.appendChild(btn);
+        }
+      } else if (latestBooking.status === "canceled") {
+        detailsDiv.innerHTML = "<p style='color:red;'>❌ Booking was rejected by the owner.</p>";
+        const backBtn = document.createElement("button");
+        backBtn.textContent = "🏠 Go Back to Home";
+        backBtn.onclick = () => window.location.href = "../rydhaan-main/renter.html";
+        payDiv.innerHTML = "";
+        payDiv.appendChild(backBtn);
+      } else {
+        detailsDiv.innerHTML = `
+          <h3>⏳ Awaiting Owner Response</h3>
+          <p>Please wait while the owner reviews your request.</p>
+        `;
+      }
+    }
+
+    renderStatus();
+
+    setTimeout(() => {
+    let booking = JSON.parse(localStorage.getItem("booking"));
+    if (booking && booking.status === "awaiting") {
+      booking.status = Math.random() > 0.5 ? "confirmed" : "canceled";
+      localStorage.setItem("booking", JSON.stringify(booking));
+
+      renderStatus();
+    }
+  }, 15000); 
+
+  </script>
+</body>
+</html>

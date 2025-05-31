@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting to Stripe...</title>
+</head>
+<body>
+  <p>Redirecting to payment gateway...</p>
+
+  <script>
+    const booking = JSON.parse(localStorage.getItem("booking"));
+
+    if (!booking || !booking.totalPrice) {
+      alert("Booking info missing. Please try again.");
+    } else {
+      fetch("https://rydhaan-1.onrender.com/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount: booking.totalPrice })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          alert("Stripe session creation failed.");
+        }
+      })
+      .catch(err => {
+        console.error("Stripe error:", err);
+        alert("Payment initiation failed.");
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #ffffff;
+    }
+    .container {
+      text-align: center;
+    }
+    .checkmark {
+      font-size: 60px;
+      color: green;
+    }
+    .crossmark {
+      font-size: 60px;
+      color: red;
+    }
+    h1 {
+      font-size: 28px;
+      margin: 15px 0 10px;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    a.button {
+      background-color: #004aad;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    a.button:hover {
+      background-color: #00337c;
+    }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 22px;
+      }
+      p {
+        font-size: 16px;
+      }
+      .checkmark, .crossmark {
+        font-size: 50px;
+      }
+      a.button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <span style="font-family: Arial Unicode MS, Lucida Grande; font-size: 140px; color: rgb(118, 189, 12)">
+      &#128505;
+    </span>
+    <h1>Thank You</h1>
+    <p>Your Car is Booked.</p>
+    <button onclick="redirectToHome()">Back to Home</button>
+  </div>
+  <script>
+      function redirectToHome() {
+        window.location.href = "https://ishivaniyadav.github.io/Rydhaan/rydhaan-main/renter.html"; 
+      }
+  </script>
+</body>
+</html>
