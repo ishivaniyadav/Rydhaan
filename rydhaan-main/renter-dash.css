@@ -1,0 +1,359 @@
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+    }
+
+    .navbar {
+        display: flex;
+        background: #222;
+        padding: 10px 20px;
+        color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .navbar h2 {
+        margin: 0;
+        font-size: 22px;
+    }
+    .nav-links {
+        display: flex;
+        gap: 10px;
+        margin-left: 40%;
+    }
+    .nav-links div {
+        text-align: center;
+        width: 110px;
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .nav-links div:hover, .nav-links div.active {
+        background: gold;
+        border-radius: 5px;
+        width: 110px;
+    }
+    .home-btn {
+        text-align: center;
+        padding: 10px 15px;
+        margin-left: 10px;
+        background: slateblue;
+        width:90px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .home-btn:hover {
+        background: darkslateblue;
+    }
+
+    .tab-content {
+        display: none;
+        padding: 20px;
+    }
+    .tab-content.active {
+        display: block;
+    }
+
+    .car-card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background: white;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 15px;
+    }
+    .car-card img {
+        width: 120px;
+        height: 80px;
+        border-radius: 5px;
+    }
+    .btn {
+        background: #4CAF50;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .btn:hover {
+        background: #45a049;
+    }
+
+    #searchInput {
+        padding: 10px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    table, th, td {
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+    th, td {
+        padding: 10px;
+    }
+    th {
+        background: #f4f4f4;
+    }
+    #rentForm {
+        width: 50%;
+        margin: auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    #rentForm h3 {
+    text-align: center;
+    }
+
+    #rentForm label {
+    font-weight: bold;
+    }
+
+    #rentForm input, #rentForm select {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    }
+
+    #rentForm button {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 12px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    }
+
+    #rentForm button:hover {
+    background: #45a049;
+    }
+
+    #rentTotal {
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+    }
+    .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    }
+
+    .modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 420px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+    }
+
+    .modal h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #333;
+    }
+
+    .modal label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    margin: 8px 0 5px;
+    text-align: left;
+    }
+
+    .modal input, .modal select, textarea {
+    width: 95%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s ease;
+    }
+
+    .modal input:focus, .modal select:focus {
+    border-color: #4CAF50;
+    }
+
+    #rentTotal {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2d6a4f;
+    margin: 15px 0;
+    }
+
+    .modal-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+    }
+
+    .modal-buttons button {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    }
+
+    .back-btn {
+    background: #f0ad4e;
+    color: white;
+    }
+
+    .back-btn:hover {
+    background: #ec971f;
+    }
+
+    .calculate-btn {
+    background: #3498db;
+    color: white;
+    }
+
+    .calculate-btn:hover {
+    background: #2980b9;
+    }
+
+    .book-btn {
+    background: #2d6a4f;
+    color: white;
+    display: none;
+    }
+
+    .book-btn:hover {
+    background: #1b4332;
+    }
+    .search-container {
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    }
+
+    .search-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    }
+
+    .search-options input,
+    .search-options select,
+    .search-options button {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    min-width: 180px;
+    }
+
+    .car-card mark {
+    background-color: yellow;
+    padding: 0 2px;
+    border-radius: 3px;
+    }
+    @media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        margin-left: auto;
+        align-items: flex-end;
+        gap: 5px;
+    }
+
+    .nav-links div {
+        width: auto;
+        padding: 8px 12px;
+    }
+
+    .home-btn {
+        margin-left: auto;
+        margin-top: 10px;
+    }
+
+    #rentForm {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .car-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-options {
+        flex-direction: column;
+    }
+
+    .search-options input,
+    .search-options select,
+    .search-options button {
+        width: 100%;
+    }
+
+    .modal {
+        width: 95%;
+    }
+    }
+
+    .tab-content h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    }
+
+    .car-card {
+    transition: transform 0.3s ease;
+    }
+    .car-card:hover {
+    transform: translateY(-5px);
+    }
+
+    input:focus, select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    }
+
+    .navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    }

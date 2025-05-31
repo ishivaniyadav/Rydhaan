@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Rydhaan | Peer-To-Peer-Car-Sharing</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo" id="main">RYDHAAN</div>
+            <ul>
+                <li><a href="#main">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#deals">Deals</a></li>
+                <li><a href="#benefits">Why Choose Us</a></li>
+                <li><a href="#contact">Contact Us</a></li> 
+            </ul>
+            <div class="dropdown">
+                <button id="role-switch-btn" class="dropbtn">Switch Profiles</button>
+                <div class="dropdown-content" id="role-dropdown">
+                    <a href="owner.html" onclick="setRole('Owner')">Owner</a>
+                    <a href="renter.html" onclick="setRole('Renter')">Renter</a>
+                </div>
+            </div>
+            <div class="renter-dash">
+                <button id="renter-dash"><a href="renter-dashboard.html"  style="color:white;" >Dashboard</a></button>
+              </div>
+            <div class="register">
+              <button id="register"><a href="../authentication/register.html"  style="color:white;" >Logout</a></button>
+            </div>
+        </nav>
+        <div class="header__container" id="home">
+            <div class="header__image">
+                <img src="assets/pngwing.com (5).png"alt="header" style="width: 97%; height: 70%; margin-top: -5%;"/>
+            </div>
+            <div class="header__content">
+                <p style="color: black; font-size: 24px; font-weight: bold; margin-left: 10px; margin-bottom: 10px;">Welcome, Renter</p>
+                <h2>👍Trusted car sharing platform in India</h2>
+                <h1>DRIVING CONNECTIONS, SHARING FREEDOM</h1>
+                <p class="section__description">
+                    Rent, Lend, Earn with Rydhaan! Simple, Secure, and Flexible.
+                </p>
+                <button><a href="#deals" style=" border-radius: 4px; color:white; height:50px; width:100px;">Get Started</a></button>
+            </div>
+        </div>
+    </header>
+    <section class="section__container about_section" id="about">
+      <h2 class="section__header">About Rydhaan</h2>
+      <div class="about_content">
+        <img src="assets/about-img.png" alt="Car Image" class="about_image">
+        <div class="about_text">
+          <p class="section_description-about">
+            Rydhaan makes car rentals simple, flexible, and accessible for everyone. If you own a car, you can list it on the platform and earn extra income whenever your car is not in use. Renters, on the other hand, can explore a wide range of vehicles, perfectly suited for travel, work, or everyday needs—all at affordable rates.<br><br>Rydhaan focuses on trust, security, and transparency, ensuring every transaction is safe and reliable. With a user-friendly platform and excellent customer support, the process is smooth and hassle-free. Whether you’re seeking a convenient ride or looking to make the most of your car, Rydhaan connects people in meaningful ways, making car sharing easier than ever.<br><br>Moreover, Rydhaan emphasizes community-driven mobility by promoting resource sharing and reducing the environmental impact of owning multiple vehicles. Whether it's a quick commute, a family vacation, or a special occasion, Rydhaan offers tailored solutions to suit every need. With Rydhaan, mobility becomes smarter, more sustainable, and a whole lot simpler.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section__container about__container" id="how-it-works">
+        <h2 class="section__header">How Rydhaan Works</h2>
+        <p class="section__description">
+            Renting a car with us is simple! Choose your vehicle, pick your dates, and complete your booking. We'll handle the rest, ensuring a smooth start to your journey.
+        </p>
+        <div class="about__grid">
+            <div class="about__card">
+                <span><i class="ri-map-pin-2-fill"></i></span>
+                <h4>Choose Location</h4>
+                <p>Select from a variety of pick-up locations that best suit your needs, whether it's close to home, work, or airport.</p>
+            </div>
+            <div class="about__card">
+                <span><i class="ri-calendar-event-fill"></i></span>
+                <h4>Pick-up Date </h4>
+                <p>Choose the exact date and time for your car pick-up, ensuring that your vehicle is ready when you need it.</p>
+            </div>
+            <div class="about__card">
+                <span><i class="ri-roadster-fill"></i></span>
+                <h4>Book your Car</h4>
+                <p>Complete your booking with just a few clicks, and we'll prepare your vehicle to ensure a hassle-free pick-up.</p>
+            </div>
+        </div>
+    </section>
+    <section class="deals" id="deals">
+      <div class="section__container deals__container">
+        <h2 class="section__header">Most popular car rental deals</h2>
+        <p class="section__description">
+          Explore our top car rental deals, handpicked to give you the best
+          value and experience. Book now and drive your favorite ride at an
+          incredible rate!
+        </p>
+        <div class="deals__tabs" id="models">
+          <button class="btn active" data-id="Hyundai">Hyundai</button>
+          <button class="btn" data-id="Volkswagen">Volkswagen</button>
+          <button class="btn" data-id="Renault">Renault</button>
+          <button class="btn" data-id="Toyota">Toyota</button>
+          <button class="btn" data-id="Honda">Honda</button>
+        </div>
+        <div id="Hyundai" class="tab__content active">
+          <div class="deals__card">
+            <img src="assets/Creta.jfif" alt="deals" />
+            <div class="deals__rating">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+              <span>(550)</span>
+            </div>
+            <h4>Creta</h4>
+            <div class="deals__card__grid">
+              <div>
+                <span><i class="ri-group-line"></i></span> 4 People
+              </div>
+              <div>
+                <span><i class="ri-steering-2-line"></i></span> Automatic
+              </div>
+              <div>
+                <span><i class="ri-speed-up-line"></i></span> 18km/l
+              </div>
+              <div>
+                <span><i class="ri-car-line"></i></span> Electric
+              </div>
+            </div>
+            <hr />
+            <div class="deals__card__footer">
+              <h3>₹1330<span>/Per Hour</span></h3>
+              <a href="renter-dashboard.html">
+                Rent Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="deals__card">
+            <img src="assets/Verna.jpg" alt="deals" />
+            <div class="deals__rating">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+              <span>(450)</span>
+            </div>
+            <h4>Verna</h4>
+            <div class="deals__card__grid">
+              <div>
+                <span><i class="ri-group-line"></i></span> 4 People
+              </div>
+              <div>
+                <span><i class="ri-steering-2-line"></i></span> Automatic
+              </div>
+              <div>
+                <span><i class="ri-speed-up-line"></i></span> 18km/l
+              </div>
+              <div>
+                <span><i class="ri-car-line"></i></span> Electric
+              </div>
+            </div>
+            <hr />
+            <div class="deals__card__footer">
+              <h3>₹1260<span>/Per Hour</span></h3>
+              <a href="renter-dashboard.html">
+                Rent Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="deals__card">
+            <img src="assets/exter.webp" alt="deals" />
+            <div class="deals__rating">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+              <span>(550)</span>
+            </div>
+            <h4>Exter</h4>
+            <div class="deals__card__grid">
+              <div>
+                <span><i class="ri-group-line"></i></span> 4 People
+              </div>
+              <div>
+                <span><i class="ri-steering-2-line"></i></span> Manual
+              </div>
+              <div>
+                <span><i class="ri-speed-up-line"></i></span> 18km/l
+              </div>
+              <div>
+                <span><i class="ri-car-line"></i></span> Electric
+              </div>
+            </div>
+            <hr />
+            <div class="deals__card__footer">
+              <h3>₹1240<span>/Per Hour</span></h3>
+              <a href="renter-dashboard.html">
+                Rent Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div id="Volkswagen" class="tab__content">
+          <div class="deals__card">
+            <img src="assets/Virtus.webp" alt="deals" />
+            <div class="deals__rating">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+              <span>(350)</span>
+            </div>
+            <h4>Virtus</h4>
+            <div class="deals__card__grid">
+              <div>
+                <span><i class="ri-group-line"></i></span> 4 People
+              </div>
+              <div>
+                <span><i class="ri-steering-2-line"></i></span> Manual
+              </div>
+              <div>
+                <span><i class="ri-speed-up-line"></i></span> 18km/l
+              </div>
+              <div>
+                <span><i class="ri-car-line"></i></span> Diesel
+              </div>
+            </div>
+            <hr />
+            <div class="deals__card__footer">
+              <h3>₹1270<span>/Per Hour</span></h3>
+              <a href="renter-dashboard.html">
+                Rent Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="deals__card">
+            <img src="assets/passat.webp" alt="deals" />
+            <div class="deals__rating">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+              <span>(250)</span>
+            </div>
+            <h4>Passat</h4>
+            <div class="deals__card__grid">
+              <div>
+                <span><i class="ri-group-line"></i></span> 4 People
+              </div>
+              <div>
+                <span><i class="ri-steering-2-line"></i></span> Manual
+              </div>
+              <div>
+                <span><i class="ri-speed-up-line"></i></span> 18km/l
+              </div>
+              <div>
+                <span><i class="ri-car-line"></i></span> Diesel
+              </div>
+            </div>
+            <hr />
+            <div class="deals__card__footer">
+              <h3>₹1340<span>/Per Hour</span></h3>
+              <a href="renter-dashboard.html">
+                Rent Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="deals__card">
+            <img src="assets//tiguan.jfif" alt="deals" />
+            <div class="deals__rating">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+              <span>(150)</span>
+            </div>
+            <h4>Tiguan</h4>
+            <div class="deals__card__grid">
+              <div>
+                <span><i class="ri-group-line"></i></span> 4 People
+              </div>
+              <div>
+                <span><i class="ri-steering-2-line"></i></span> Manual
+              </div>
+              <div>
+                <span><i class="ri-speed-up-line"></i></span> 18km/l
+              </div>
+              <div>
+                <span><i class="ri-car-line"></i></span> Diesel
+              </div>
+            </div>
+            <hr />
+            <div class="deals__card__footer">
+              <h3>₹1420<span>/Per Hour</span></h3>
+              <a href="renter-dashboard.html">
+                Rent Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div id="Renault" class="tab__content">
+          <div class="deals__card">
+            <img src="assets/kiger.webp" alt="deals" />
+            <div class="deals__rating">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+              <span>(200)</span>
+            </div>
+            <h4>Kiger</h4>
+            <div class="deals__card__grid">
+              <div>
+                <span><i class="ri-group-line"></i></span> 4 People
+              </div>
+              <div>
+                <span><i class="ri-steering-2-line"></i></span> Automatic
+              </div>
+              <div>
+                <span><i class="ri-speed-up-line"></i></span> 18km/l
+              </div>
+              <div>
+                <span><i class="ri-car-line"></i></span> Electric
+              </div>
+            </div>
+            <hr />
+            <div class="deals__card__footer">
+              <h3>₹1250<span>/Per Hour</span></h3>
+              <a href="renter-dashboard.html">
+                Rent Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="deals__card">
+            <img src="assets/duster.webp" alt="deals" />
+            <div class="deals__rating">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+              <span>(100)</span>
+            </div>
+            <h4>Duster</h4>
+            <div class="deals__card__grid">
+              <div>
+                <span><i class="ri-group-line"></i></span> 4 People
+              </div>
+              <div>
+                <span><i class="ri-steering-2-line"></i></span> Automatic
+              </div>
+              <div>
+                <span><i class="ri-speed-up-line"></i></span> 18km/l
+              </div>
+              <div>
+                <span><i class="ri-car-line"></i></span> Electric
+              </div>
+            </div>
+            <hr />
+            <div class="deals__card__footer">
+              <h3>₹1300<span>/Per Hour</span></h3>
+              <a hre2="renter-dashboard.html">
+                Rent Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="deals__card">
+            <img src="assets/captur.jfif" alt="deals" />
+            <div class="deals__rating">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+              <span>(180)</span>
+            </div>
+            <h4>Captur</h4>
+            <div class="deals__card__grid">
+              <div>
+                <span><i class="ri-group-line"></i></span> 4 People
+              </div>
+              <div>
+                <span><i class="ri-steering-2-line"></i></span> Automatic
+              </div>
+              <div>
+                <span><i class="ri-speed-up-line"></i></span> 18km/l
+              </div>
+              <div>
+                <span><i class="ri-car-line"></i></span> Electric
+              </div>
+            </div>
+            <hr />
+            <div class="deals__card__footer">
+              <h3>₹1290<span>/Per Hour</span></h3>
+              <a href="renter-dashboard.html">
+                Rent Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div id="Toyota" class="tab__content">
+          <div class="deals__card">
+            <img src="assets/corolla.jfif" alt="deals" />
+            <div class="deals__rating">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+              <span>(250)</span>
+            </div>
+            <h4>Corolla</h4>
+            <div class="deals__card__grid">
+              <div>
+                <span><i class="ri-group-line"></i></span> 4 People
+              </div>
+              <div>
+                <span><i class="ri-steering-2-line"></i></span> Manual
+              </div>
+              <div>
+                <span><i class="ri-speed-up-line"></i></span> 18km/l
+              </div>
+              <div>
+                <span><i class="ri-car-line"></i></span> Diesel
+              </div>
+            </div>
+            <hr />
+            <div class="deals__card__footer">
+              <h3>₹1300<span>/Per Hour</span></h3>
+              <a href="renter-dashboard.html">
+                Rent Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="deals__card">
+            <img src="assets/innova.png" alt="deals" />
+            <div class="deals__rating">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+              <span>(550)</span>
+            </div>
+            <h4>Innova</h4>
+            <div class="deals__card__grid">
+              <div>
+                <span><i class="ri-group-line"></i></span> 4 People
+              </div>
+              <div>
+                <span><i class="ri-steering-2-line"></i></span> Manual
+              </div>
+              <div>
+                <span><i class="ri-speed-up-line"></i></span> 18km/l
+              </div>
+              <div>
+                <span><i class="ri-car-line"></i></span> Diesel
+              </div>
+            </div>
+            <hr />
+            <div class="deals__card__footer">
+              <h3>₹1350<span>/Per Hour</span></h3>
+              <a href="renter-dashboard.html">
+                Rent Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="deals__card">
+            <img src="assets/fortuner.webp" alt="deals" />
+            <div class="deals__rating">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+              <span>(180)</span>
+            </div>
+            <h4>Fortuner</h4>
+            <div class="deals__card__grid">
+              <div>
+                <span><i class="ri-group-line"></i></span> 4 People
+              </div>
+              <div>
+                <span><i class="ri-steering-2-line"></i></span> Manual
+              </div>
+              <div>
+                <span><i class="ri-speed-up-line"></i></span> 18km/l
+              </div>
+              <div>
+                <span><i class="ri-car-line"></i></span> Diesel
+              </div>
+            </div>
+            <hr />
+            <div class="deals__card__footer">
+              <h3>₹1450<span>/Per Hour</span></h3>
+              <a href="renter-dashboard.html">
+                Rent Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div id="Honda" class="tab__content">
+          <div class="deals__card">
+            <img src="assets/amaze.jfif" alt="deals" />
+            <div class="deals__rating">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+              <span>(200)</span>
+            </div>
+            <h4>Amaze</h4>
+            <div class="deals__card__grid">
+              <div>
+                <span><i class="ri-group-line"></i></span> 4 People
+              </div>
+              <div>
+                <span><i class="ri-steering-2-line"></i></span> Manual
+              </div>
+              <div>
+                <span><i class="ri-speed-up-line"></i></span> 18km/l
+              </div>
+              <div>
+                <span><i class="ri-car-line"></i></span> Diesel
+              </div>
+            </div>
+            <hr />
+            <div class="deals__card__footer">
+              <h3>₹1180<span>/Per Hour</span></h3>
+              <a href="renter-dashboard.html">
+                Rent Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="deals__card">
+            <img src="assets/elevate.avif" alt="deals" />
+            <div class="deals__rating">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+              <span>(350)</span>
+            </div>
+            <h4>Elevate</h4>
+            <div class="deals__card__grid">
+              <div>
+                <span><i class="ri-group-line"></i></span> 4 People
+              </div>
+              <div>
+                <span><i class="ri-steering-2-line"></i></span> Automatic
+              </div>
+              <div>
+                <span><i class="ri-speed-up-line"></i></span> 18km/l
+              </div>
+              <div>
+                <span><i class="ri-car-line"></i></span> Electric
+              </div>
+            </div>
+            <hr />
+            <div class="deals__card__footer">
+              <h3>₹1320<span>/Per Hour</span></h3>
+              <a href="renter-dashboard.html">
+                Rent Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="deals__card">
+            <img src="assets/city.jfif" alt="deals" />
+            <div class="deals__rating">
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-fill"></i></span>
+              <span><i class="ri-star-line"></i></span>
+              <span>(300)</span>
+            </div>
+            <h4>City</h4>
+            <div class="deals__card__grid">
+              <div>
+                <span><i class="ri-group-line"></i></span> 4 People
+              </div>
+              <div>
+                <span><i class="ri-steering-2-line"></i></span> Manual
+              </div>
+              <div>
+                <span><i class="ri-speed-up-line"></i></span> 18km/l
+              </div>
+              <div>
+                <span><i class="ri-car-line"></i></span> Diesel
+              </div>
+            </div>
+            <hr />
+            <div class="deals__card__footer">
+              <h3>₹1280<span>/Per Hour</span></h3>
+              <a href="renter-dashboard.html">
+                Rent Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container benefits_section" id="benefits">
+      <h2 class="section__header">Why Choose Rydhaan?</h2>
+      <div class="benefits_content">
+        <div class="benefits_text">
+          <p class="section_description">
+            Experience the ultimate flexibility and convenience in car rentals. 
+            We focus on trust, ease of use, and a community-driven approach to 
+            ensure a hassle-free experience for both owners and renters.
+          </p>
+          <div class="benefits_list">
+            <div class="benefit_item">
+              <h3>Seamless Rentals</h3>
+              <p>Effortless booking and listing process for both renters and owners.</p>
+            </div>
+            <div class="benefit_item">
+              <h3>Dedicated Support</h3>
+              <p>Our team is here for you anytime, ensuring smooth and reliable assistance.</p>
+            </div>
+            <div class="benefit_item">
+              <h3>Trusted Network</h3>
+              <p>Verified vehicles and user profiles for secure transactions.</p>
+            </div>
+            <div class="benefit_item">
+              <h3>Affordable Rates</h3>
+              <p>Competitive pricing with no hidden charges, ensuring great value.</p>
+            </div>
+            <div class="benefit_item">
+              <h3>Flexible Options</h3>
+              <p>Choose short or long-term rentals that fit your schedule.</p>
+            </div>
+            <div class="benefit_item">
+              <h3>Ease of Use</h3>
+              <p>Simple platform for posting and booking vehicles in minutes.</p>
+            </div>
+          </div>
+        </div>
+        <img src="assets/imgbin_2018-bmw-320i-car-luxury-vehicle-sedan-png.png" alt="Car Image" class="benefits_image">
+      </div>
+    </section>
+    <section class="section__container client__container" id="client">
+      <h2 class="section__header">What people say about Rydhaan?</h2>
+      <p class="section__description">
+        Discover why our customers love renting with us! Read real reviews and
+        testimonials to see how we deliver exceptional service.
+      </p>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="client__card">
+              <div class="client__details">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1-yNUpIctExxso1uCNQtVxOmsM2-gCpfNLvKui14jtErQi3N-VnUW3YjAuLICHBT9DLg&usqp=CAU" alt="client" />
+                <div>
+                  <h4>Sarah Johnson</h4>
+                  <div class="client__rating">
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-line"></i></span>
+                  </div>
+                </div>
+              </div>
+              <p>
+                I had an amazing experience renting a car from this service. The
+                booking process was quick and easy, and the car was in perfect
+                condition. Highly recommend!
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="client__card">
+              <div class="client__details">
+                <img src="data:image/png;base64,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" alt="client" />
+                <div>
+                  <h4>Michael Adams</h4>
+                  <div class="client__rating">
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-line"></i></span>
+                  </div>
+                </div>
+              </div>
+              <p>
+                Customer support was excellent! They helped me with all my
+                questions, and I felt confident about my booking. I will
+                definitely rent from them again.
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="client__card">
+              <div class="client__details">
+                <img src="data:image/png;base64,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" alt="client" />
+                <div>
+                  <h4>Emily Martinez</h4>
+                  <div class="client__rating">
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-fill"></i></span>
+                    <span><i class="ri-star-line"></i></span>
+                  </div>
+                </div>
+              </div>
+              <p>
+                Affordable prices and great selection of vehicles! I found
+                exactly what I needed, and the pick-up and drop-off process was
+                seamless. Very happy with my rental.
+              </p>
+            </div>
+          </div>
+      </div>
+    </section>
+    <footer class="footer" id="contact">
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <div class="footer__logo">
+                    <a href="#" class="logo">
+                        <span>Rydhaan</span>
+                    </a>
+                </div>
+                <p>We're here to provide you with the best vehicles and a seamless rental experience. Stay connected for updates, special offers, and more. Drive with confidence!</p>
+                <ul class="footer__socials">
+                    <li><a href="#"><i class="ri-facebook-fill"></i></a></li>
+                    <li><a href="#"><i class="ri-twitter-fill"></i></a></li>
+                    <li><a href="#"><i class="ri-linkedin-fill"></i></a></li>
+                    <li><a href="#"><i class="ri-instagram-line"></i></a></li>
+                    <li><a href="#"><i class="ri-youtube-fill"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Our Services</h4>
+                <ul class="footer__links">
+                    <li><a href="#main">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#deals">Rental Deals</a></li>
+                    <li><a href="#benefits">Why Choose Us</a></li>
+                    <li><a href="#client">Testimonials</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Vehicle Model</h4>
+                <ul class="footer__links">
+                    <li><a href="#models">Hyundai</a></li>
+                    <li><a href="#models">Volkswagen</a></li>
+                    <li><a href="#models">Renault</a></li>
+                    <li><a href="#models">Toyota</a></li>
+                    <li><a href="#models">Honda</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Contact</h4>
+                <ul class="footer__links">
+                    <li><a href="#"><span><i class="ri-phone-fill"></i></span> +91 0987654321</a></li>
+                    <li><a href="#"><span><i class="ri-map-pin-fill"></i></span> Greater Noida, India</a></li>
+                    <li><a href="#"><span><i class="ri-mail-fill"></i></span> info@rydhaan</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bar">
+            Copyright © 2024 Rydhaan. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

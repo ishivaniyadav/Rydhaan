@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RENTER PROFILE</title>
+  <link rel="stylesheet" href="renter-dash.css" />
+</head>
+<body>
+  <div class="navbar">
+    <h2>RENTER PROFILE</h2>
+    <div class="nav-links">
+      <div class="tab active" onclick="showTab('availableCars')">Available Cars</div>
+      <div class="tab" onclick="showTab('search')">Search</div>
+      <div class="tab" onclick="showTab('myBookings')">My Bookings</div>
+    </div>
+    <a href="renter.html" class="home-btn">Home</a>
+  </div>
+
+  <div id="availableCars" class="tab-content active">
+    <h3>Available Cars for Rent</h3>
+    <div id="carList"></div>
+    <div class="overlay" id="overlay"></div>
+    <div id="rentModal" class="modal">
+      <h3>Rent a Car</h3>
+      <form id="booking-form">
+        <label for="renterName">Full Name:</label>
+        <input type="text" id="renterName" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" required />
+
+        <label for="start-date">Start Date & Time:</label>
+        <input type="datetime-local" id="start-date" required />
+
+        <label for="end-date">End Date & Time:</label>
+        <input type="datetime-local" id="end-date" required />
+
+        <label for="address">Address:</label>
+        <textarea id="address" required></textarea>
+
+        <p style="font-weight: bold; margin-top: 10px">
+          This car costs: ₹<span id="selected-price">0</span> / hour
+        </p>
+        <p id="price-type" style="font-size: 13px; color: gray"></p>
+
+        <h3>Total: ₹<span id="total-price">0</span></h3>
+
+        <div class="modal-buttons">
+          <button type="button" class="back-btn" onclick="closeModal()">
+            Back
+          </button>
+          <button
+            type="button"
+            class="calculate-btn"
+            onclick="calculateIndexRent()"
+          >
+            Calculate Rent
+          </button>
+          <button
+            type="submit"
+            class="book-btn"
+            id="book-now"
+            style="display: none"
+          >
+            BOOK NOW
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="search" class="tab-content">
+    <div class="search-container">
+      <div class="search-options">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by Brand..."
+          oninput="searchCars()"
+        />
+        <input
+          type="text"
+          id="typeFilter"
+          placeholder="Enter Car Type..."
+          oninput="searchCars()"
+        />
+        <input
+          type="text"
+          id="transmissionFilter"
+          placeholder="Enter Transmission..."
+          oninput="searchCars()"
+        />
+        <input
+          type="text"
+          id="yearFilter"
+          placeholder="Enter Year..."
+          oninput="searchCars()"
+        />
+        <input
+          type="number"
+          id="priceFilter"
+          placeholder="Max Price/Hour"
+          oninput="searchCars()"
+        />
+        <select id="sortBy" onchange="searchCars()">
+          <option value="">Sort By</option>
+          <option value="price">Price (Low to High)</option>
+          <option value="year">Year (Newest First)</option>
+          <option value="brand">Brand (A-Z)</option>
+        </select>
+        <button onclick="resetFilters()">Reset Filters</button>
+      </div>
+      <div id="searchResults" class="car-list"></div>
+    </div>
+  </div>
+
+  <div id="myBookings" class="tab-content">
+    <h3>Your Bookings</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Car Brand</th>
+          <th>From Time</th>
+          <th>To Time</th>
+          <th>Total Price</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="bookingTableBody">
+        <tr><td colspan="5">No bookings yet.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="renter-dash.js"></script>
+</body>
+</html>
